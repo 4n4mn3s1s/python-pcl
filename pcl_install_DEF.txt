@@ -1,0 +1,16 @@
+++++++++++++++++++++++++++++++++++ DEF INSTALLATION ++++++++++++++++++++++++++++++++++
+1) Install PCL (PointCloudLibrary) libraries: sudo apt install libpcl-dev
+
+2) Install the development version of python-pcl from a cloned Git repository
+
+$ git clone https://github.com/strawlab/python-pcl.git
+$ cd python-pcl
+
+3) In the setup.py modify the following lines:
+	- Line 726, change: vtk_version = '7.0' by vtk_version = '6.3'
+	- Line 751-752: comment 2 following lines:
+		elif vtk_version == '6.3':
+        		vtklibreleases = []
+
+4) Install:
+	$ /home/csampedro/.virtualenvs/point_cloud_processing_env/bin/python3 setup.py install
